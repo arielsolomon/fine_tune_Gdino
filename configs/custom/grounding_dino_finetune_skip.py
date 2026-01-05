@@ -1,7 +1,7 @@
 _base_ = 'grounding_dino_swin-t_pretrain_obj365_goldg_cap4m.py'
 
 # --- 1. PATHS AND CLASSES ---
-data_root = '/work/datasets/mini_chinese_dataset/'
+data_root = '/work/datasets/Chinase_env_arial_IR_fine_tune/'
 class_names = ('Vehicle',) 
 
 metainfo = dict(
@@ -59,8 +59,8 @@ test_pipeline = [
 
 # --- 4. DATALOADERS ---
 train_dataloader = dict(
-    batch_size=2,
-    num_workers=2,
+    batch_size=4,
+    num_workers=8,
     persistent_workers=True,
     sampler=dict(type='DefaultSampler', shuffle=True),
     dataset=dict(

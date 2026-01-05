@@ -15,5 +15,6 @@ def patch_coco_json(path):
     print(f"Patched {path}")
 
 
-patch_coco_json('/home/user1/ariel/datasets/mini_chinese_dataset/labels/train.json')
-patch_coco_json('/home/user1/ariel/datasets/mini_chinese_dataset/labels/test.json')
+patch_coco_json('/home/user1/ariel/datasets/Chinase_env_arial_IR_fine_tune/labels/train.json')
+patch_coco_json('/home/user1/ariel/datasets/Chinase_env_arial_IR_fine_tune/labels/test.json')
+patch_coco_json('/home/user1/ariel/datasets/Chinase_env_arial_IR_fine_tune/labels/val.json')
