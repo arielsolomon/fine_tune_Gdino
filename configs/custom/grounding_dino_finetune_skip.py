@@ -107,7 +107,7 @@ test_evaluator = val_evaluator
 
 # --- 6. TRAINING STRATEGY ---
 # CHANGED: val_interval set to 13 (higher than max_epochs) to skip the crash.
-train_cfg = dict(type='EpochBasedTrainLoop', max_epochs=12, val_interval=13)
+train_cfg = dict(type='EpochBasedTrainLoop', max_epochs=50, val_interval=51)
 val_cfg = dict(type='ValLoop')
 test_cfg = dict(type='TestLoop')
 
@@ -125,7 +125,7 @@ param_scheduler = [
 
 # --- 7. HOOKS AND LOGGING ---
 default_hooks = dict(
-    checkpoint=dict(type='CheckpointHook', interval=1, max_keep_ckpts=5),
+    checkpoint=dict(type='CheckpointHook', interval=4, max_keep_ckpts=5),
     logger=dict(type='LoggerHook', interval=50)
 )
 
