@@ -1,3 +1,4 @@
+custom_imports = dict(imports=['weight_interpolation_hook'], allow_failed_imports=False)
 _base_ = 'grounding_dino_swin-t_pretrain_obj365_goldg_cap4m.py'
 
 # --- 1. PATHS AND CLASSES ---
@@ -128,5 +129,8 @@ default_hooks = dict(
     checkpoint=dict(type='CheckpointHook', interval=4, max_keep_ckpts=5),
     logger=dict(type='LoggerHook', interval=50)
 )
+custom_hooks = [
+    dict(type='WeightInterpolationHook', alpha=0.7)
+]
 
 load_from = 'https://download.openmmlab.com/mmdetection/v3.0/grounding_dino/groundingdino_swint_ogc_mmdet-822d7e9d.pth'
